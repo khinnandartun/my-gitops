@@ -1,0 +1,60 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@khinnandartun 
+khinnandartun
+/
+gitops-cert-level-2-examples
+Public
+forked from codefresh-contrib/gitops-cert-level-2-examples
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+gitops-cert-level-2-examples/app-of-apps/my-app-list/argo-rollouts.yml
+@kostis-codefresh
+kostis-codefresh app of apps example
+Latest commit ed602a2 on Jul 21
+ History
+ 1 contributor
+32 lines (28 sloc)  1.23 KB
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-react-app-{{ .Values.source.targetRevision}}
+  # You'll usually want to add your resources to the argocd namespace.
+  # Add a this finalizer ONLY if you want these to cascade delete.
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  # The project the application belongs to.
+  project: default
+
+  # Source of the application manifests
+  source:
+    repoURL: {{ .Values.source.repoURL }}
+    targetRevision: {{ .Values.source.targetRevision}}
+    path: helm/my-react-app
+   
+  # Destination cluster and namespace to deploy the application
+  destination:
+    server: {{ .Values.destination.server }}
+    namespace: {{.Values.destination.namespace }}
+
+  # Sync policy
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true  
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+  
