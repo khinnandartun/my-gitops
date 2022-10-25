@@ -4,6 +4,7 @@ metadata:
   name: my-react-{{ .Values.source.targetRevision}}
   annotations: 
     notifications.argoproj.io/subscribe.on-sync-succeeded.gmail: nandar2912@gmail.com
+    notifications.argoproj.io/subscribe.on-deleted.gmail: nandar2912@gmail.com
   # You'll usually want to add your resources to the argocd namespace.
   # Add a this finalizer ONLY if you want these to cascade delete.
   namespace: argocd
