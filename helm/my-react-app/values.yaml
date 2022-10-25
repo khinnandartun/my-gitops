@@ -25,6 +25,7 @@ serviceAccount:
   name: ""
 
 podAnnotations:
+  name: react-app
 
 podSecurityContext: {}
   # fsGroup: 2000
