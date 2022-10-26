@@ -58,7 +58,7 @@ ingress:
           pathType: ImplementationSpecific
           backend: 
             service: my-test-react-app
-  tls: {}
+  tls: 
    - secretName: tls-my-reat-app-selfsgined
      hosts:
        - my-reat-app.knt.org
