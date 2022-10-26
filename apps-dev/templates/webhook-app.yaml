@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: webhook-{{ .Values.source.targetRevision }}
+  name: webhook-golang-{{ .Values.source.targetRevision }}
   # You'll usually want to add your resources to the argocd namespace.
   # Add a this finalizer ONLY if you want these to cascade delete.
   namespace: argocd
