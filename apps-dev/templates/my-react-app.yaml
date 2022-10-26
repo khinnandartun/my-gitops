@@ -8,6 +8,7 @@ metadata:
     notifications.argoproj.io/subscribe.on-deleted.gmail: khinnandartun1818@gmail.com
     notifications.argoproj.io/subscribe.on-sync-succeeded.grafana: tag1
     notifications.argoproj.io/subscribe.on-sync-status-unknown.grafana: tag1
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.webhook-golang: ""
   # You'll usually want to add your resources to the argocd namespace.
   # Add a this finalizer ONLY if you want these to cascade delete.
   namespace: argocd
