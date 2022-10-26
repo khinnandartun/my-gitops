@@ -15,7 +15,7 @@ spec:
   source:
     repoURL: {{ .Values.source.repoURL }}
     targetRevision: {{ .Values.source.targetRevision }}
-    path: helm/webhook
+    path: helm/webhook-golang
     helm:
       valueFiles:
         - values.yaml
