@@ -4,6 +4,9 @@ metadata:
   name: nginx-{{ .Values.source.targetRevision }}
   # You'll usually want to add your resources to the argocd namespace.
   # Add a this finalizer ONLY if you want these to cascade delete.
+  annotations: 
+    notifications.argoproj.io/subscribe.on-sync-succeeded.grafana: tag2
+    notifications.argoproj.io/subscribe.on-sync-status-unknown.grafana: tag2
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
