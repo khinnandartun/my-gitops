@@ -46,19 +46,19 @@ ingress:
   annotations:
     kubernetes.io/ingress.class: public
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
-    cert-manager.io/cluster-issuer: knt-issuer
-    cert-manager.io/common-name: nginx.knt.org
+    # cert-manager.io/cluster-issuer: knt-issuer
+    # cert-manager.io/common-name: nginx.knt.org
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: nginx.knt.org
+    - host: nginx.knt.test
       paths:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-   - secretName: tls-nginx-selfsigned
+   - secretName: test-secret
      hosts:
-       - nginx.knt.org
+       - nginx.knt.test
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
