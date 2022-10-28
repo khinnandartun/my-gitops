@@ -87,3 +87,6 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+config: |-
+  window.ENV = "dev"
