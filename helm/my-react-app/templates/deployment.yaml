@@ -50,11 +50,11 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
       volumes:
         - name: config-volume
           configMap:
-            name: {{ include "my-test-react-app.fullname" . }}-config
+            name: myapp-config 
+      {{- with .Values.nodeSelector }} 
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}
