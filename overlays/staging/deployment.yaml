@@ -18,7 +18,11 @@ spec:
       - name: react-app-container
         image: knt97/my-test-react-app:1.0.1
         imagePullPolicy: Always
-        ports:
-        - name: http
-          protocol: TCP
-          containerPort: 80
+        volumeMounts:
+          - name: config-volume
+            mountPath: /usr/share/ngnix/html/config.js
+            subPath: config.js
+      volumes:
+        - name: config-voulme
+          configMap:
+            name: staging-react-app-configmap
