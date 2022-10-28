@@ -19,4 +19,4 @@ spec:
   tls:
     - hosts:
         - react-app-staging.knt.org
-    secret: tls-react-app-staging-selfsigned
+      secretName: tls-react-app-staging-selfsigned
