@@ -1,7 +1,0 @@
-source:
-  repoURL: https://github.com/khinnandartun/my-gitops.git
-  targetRevision: dev
-
-destination:
-  server: https://kubernetes.default.svc
-  namespace: dev

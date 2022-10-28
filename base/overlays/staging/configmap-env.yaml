@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: react-app-conigmap
+data:
+  config.js: |-
+    window.ENV = "dev"
