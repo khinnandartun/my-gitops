@@ -17,6 +17,7 @@ spec:
       annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+        checksum/app-config: {{ include (print $.Template.BasePath "/configmap-env.yaml") . | sha256sum }}
       labels:
         {{- include "my-test-react-app.selectorLabels" . | nindent 8 }}
     spec:
@@ -36,6 +37,7 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /usr/share/nginx/html/config.js
+              subPath: config.js
           ports:
             - name: http
               containerPort: 80
