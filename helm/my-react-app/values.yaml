@@ -49,19 +49,19 @@ ingress:
     kubernetes.io/ingress.class: public
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     cert-manager.io/cluster-issuer: knt-issuer
-    cert-manager.io/common-name: my-reat-app.knt.org
+    cert-manager.io/common-name: react-app-dev.knt.org
 
   hosts:
-    - host: my-reat-app.knt.org
+    - host: react-app-dev.knt.org
       paths:
         - path: /
           pathType: ImplementationSpecific
           backend: 
             service: my-test-react-app
   tls: 
-   - secretName: tls-my-reat-app-selfsgined
+   - secretName: tls-react-app-dev-selfsgined
      hosts:
-       - my-reat-app.knt.org
+       - react-app-dev.knt.org
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
