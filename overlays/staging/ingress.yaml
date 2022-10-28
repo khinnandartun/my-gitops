@@ -13,6 +13,8 @@ spec:
         backend:
           service:
             name: staging-react-app-service
+            port:
+              number: 80
     host: react-app-staging.knt.org
   tls:
     - hosts:
