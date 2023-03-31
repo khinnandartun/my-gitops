@@ -47,7 +47,7 @@ ingress:
   className: ""
   annotations: 
     kubernetes.io/ingress.class: public
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     cert-manager.io/cluster-issuer: ca-issuer
     cert-manager.io/common-name: react-app-qa.knt.local
 
@@ -59,7 +59,7 @@ ingress:
           backend: 
             service: my-test-react-app
   tls: 
-   - secretName: tls-react-app-dev-selfsgined
+   - secretName: tls-react-app-qa-selfsgined
      hosts:
        - react-app-qa.knt.local
 
