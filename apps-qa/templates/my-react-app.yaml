@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-react-{{ .Values.source.targetRevision}}
+  name: my-react-app-{{ .Values.source.targetRevision}}
   annotations: 
     # notifications.argoproj.io/subscribe.on-sync-succeeded.gmail: khinnandartun1818@gmail.com
     # notifications.argoproj.io/subscribe.on-sync-status-unknown.gmail: khinnandartun1818@gmail.com
