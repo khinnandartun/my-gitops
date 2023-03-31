@@ -46,7 +46,7 @@ ingress:
   enabled: true
   className: ""
   annotations: 
-    kubernetes.io/ingress.class: public
+    kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
     cert-manager.io/cluster-issuer: ca-issuer
     cert-manager.io/common-name: react-app-qa.knt.local
