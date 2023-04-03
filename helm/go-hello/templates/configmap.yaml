@@ -6,5 +6,4 @@ metadata:
     avp.kubernetes.io/path: "secret/data/react/qa"
 
 data:
-  app.conf: |-
-    {{ .Values.config | nindent 4 }}
+  app.conf: {{ .Values.config | nindent 4 }}
