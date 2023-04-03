@@ -5,6 +5,7 @@ metadata:
   labels:
     {{- include "go-hello.labels" . | nindent 4 }}
 spec:
+  revisionHistoryLimit: 3
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
@@ -50,7 +51,7 @@ spec:
           volumeMounts:
             - name: config-volume
               mountPath: /.env
-              subPath: env
+              subPath: .env
       volumes:
         - name: config-volume
           configMap:
