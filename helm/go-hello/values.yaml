@@ -82,5 +82,5 @@ tolerations: []
 affinity: {}
 
 config: |-
-  NAME = "Khin Nandar Tun"
+  NAME = <path:secret/data/tls/apitest#username>
   ENV = qa
