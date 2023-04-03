@@ -50,15 +50,12 @@ spec:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config-volume
-              mountPath: /.env
+              mountPath: /app/.env
               subPath: .env
       volumes:
         - name: config-volume
           configMap:
             name: myapp-config
-            items:
-              - key: .env
-                path: .env
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
