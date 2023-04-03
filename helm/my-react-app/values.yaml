@@ -87,4 +87,4 @@ tolerations: []
 affinity: {}
 
 config: |-
-  window.ENV = <env>
+  window.ENV = staging
