@@ -83,3 +83,4 @@ affinity: {}
 
 config: |-
   NAME = "Khin Nandar Tun"
+  ENV = qa
