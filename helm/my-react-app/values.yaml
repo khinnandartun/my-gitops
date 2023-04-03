@@ -87,4 +87,4 @@ tolerations: []
 affinity: {}
 
 config: |-
-  window.ENV = staging
+  window.ENV = <path:secret/data/tls/apitest#username>;
