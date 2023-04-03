@@ -2,5 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: myapp-config
+  annotations:
+    avp.kubernetes.io/path: "secret/data/react/qa"
+
 data:
-  config.js: {{ .Values.config | nindent 4 }}
+  config.js: <env>
