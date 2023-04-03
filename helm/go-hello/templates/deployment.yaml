@@ -38,20 +38,20 @@ spec:
             - name: http
               containerPort: 8081
               protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
+          # livenessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
+          # readinessProbe:
+          #   httpGet:
+          #     path: /
+          #     port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
             - name: config-volume
-              mountPath: /app/.env
-              subPath: .env
+              mountPath: /app/app.conf
+              subPath: app.conf
       volumes:
         - name: config-volume
           configMap:
