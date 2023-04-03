@@ -55,7 +55,10 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: myapp-config 
+            name: myapp-config
+            items:
+              - key: .env
+                path: .env
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
