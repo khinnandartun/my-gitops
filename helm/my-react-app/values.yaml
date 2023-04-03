@@ -87,4 +87,4 @@ tolerations: []
 affinity: {}
 
 config: |-
-  window.ENV = <path:secrets/react/qa#env>
+  window.ENV = <path:secret/react/qa#env>
