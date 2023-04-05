@@ -15,7 +15,7 @@ spec:
     targetRevision: {{ .Values.source.targetRevision}}
     path: helm/go-hello
     plugin:
-      name: argocd-vault-plugin-helm
+      name: argocd-vault-plugin
     # helm:
     #   releaseName: qa
    
