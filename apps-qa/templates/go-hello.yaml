@@ -10,7 +10,7 @@ spec:
   # The project the application belongs to.
   project: default
   plugin:
-    name: argocd-vault-plugin-helm
+    name: argocd-vault-plugin
 
   # Source of the application manifests
   source:
