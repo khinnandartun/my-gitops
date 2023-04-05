@@ -16,8 +16,8 @@ spec:
     path: helm/go-hello
     # plugin:
     #   name: argocd-vault-plugin
-    # helm:
-    #   releaseName: qa
+    helm:
+      releaseName: qa
    
   # Destination cluster and namespace to deploy the application
   destination:
