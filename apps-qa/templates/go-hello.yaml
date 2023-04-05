@@ -10,15 +10,15 @@ spec:
   # The project the application belongs to.
   project: default
   plugin:
-    name: argocd-vault-plugin
+    name: argocd-vault-plugin-helm
 
   # Source of the application manifests
   source:
     repoURL: {{ .Values.source.repoURL }}
     targetRevision: {{ .Values.source.targetRevision}}
     path: helm/go-hello
-    helm:
-      releaseName: qa
+    # helm:
+    #   releaseName: qa
    
   # Destination cluster and namespace to deploy the application
   destination:
