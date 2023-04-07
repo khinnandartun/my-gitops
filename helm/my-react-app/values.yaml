@@ -87,4 +87,4 @@ tolerations: []
 affinity: {}
 
 config: |-
-  window.ENV = <path:secret/data/react/qa#env>
+  window.ENV = <path:secret/data/tls/apitest#username>
