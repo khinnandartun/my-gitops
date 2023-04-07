@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-react-app-{{ .Values.source.targetRevision}}
+  name: {{ .Values.source.targetRevision}}-my-react-app
   annotations: 
     # notifications.argoproj.io/subscribe.on-sync-succeeded.gmail: khinnandartun1818@gmail.com
     # notifications.argoproj.io/subscribe.on-sync-status-unknown.gmail: khinnandartun1818@gmail.com
@@ -23,8 +23,8 @@ spec:
     repoURL: {{ .Values.source.repoURL }}
     targetRevision: {{ .Values.source.targetRevision}}
     path: helm/my-react-app
-    helm:
-      releaseName: qa
+    plugin:
+      name: argocd-vault-plugin-helm
    
   # Destination cluster and namespace to deploy the application
   destination:
