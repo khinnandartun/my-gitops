@@ -82,5 +82,6 @@ tolerations: []
 affinity: {}
 
 config: |-
-  NAME = <path:kv-v2/data/demo#name>
+  # NAME = <path:kv-v2/data/demo#name>
+  NAME = <name>
   ENV = qa
